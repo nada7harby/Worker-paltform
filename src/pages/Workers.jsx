@@ -177,7 +177,7 @@ const Workers = () => {
               {/* أيقونة مسح البحث */}
               <div className="col-md-2 d-flex justify-content-around">
                 <button
-                  className="btn btn-outline-secondary w-100"
+                  className="btn btn-outline-secondary w-50"
                   onClick={clearFilters}
                 >
                   <i className="fas fa-times"></i>
@@ -278,53 +278,118 @@ const Workers = () => {
                   ></button>
                 </div>
                 <div className="modal-body">
-                  <div className="worker-modal-header">
-                    <img
-                      src={`images/${selectedWorker.image}`}
-                      alt={selectedWorker.name}
-                    />
-                  </div>
-                  <div className="worker-modal-info">
-                    <h3 className="mb-4">{selectedWorker.name}</h3>
-                    <div className="worker-modal-meta">
-                      <div className="meta-item">
-                        <i className="fas fa-flag"></i>
-                        <div className="meta-item-content">
-                          <span>الجنسية</span>
-                          <strong>{selectedWorker.nationality}</strong>
-                        </div>
-                      </div>
-                      <div className="meta-item">
-                        <i className="fas fa-briefcase"></i>
-                        <div className="meta-item-content">
-                          <span>الخبرة</span>
-                          <strong>{selectedWorker.experience} سنوات</strong>
-                        </div>
-                      </div>
-                      <div className="meta-item">
-                        <i className="fas fa-user"></i>
-                        <div className="meta-item-content">
-                          <span>العمر</span>
-                          <strong>{selectedWorker.age} سنة</strong>
-                        </div>
-                      </div>
-                      <div className="meta-item">
-                        <i className="fas fa-money-bill-wave"></i>
-                        <div className="meta-item-content">
-                          <span>الراتب</span>
-                          <strong>{selectedWorker.salary} ريال</strong>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="booking-section">
-                      <button
-                        className="btn btn-primary w-100"
-                        onClick={() => handleBookWorker(selectedWorker.id)}
+                  <div className="row">
+                    {/* الصورة */}
+                    <div className="col-md-4 text-center">
+                      <img
+                        src={`images/${selectedWorker.image}`}
+                        alt={selectedWorker.name}
+                        className="img-fluid rounded-circle mb-3"
+                        style={{
+                          width: "150px",
+                          height: "150px",
+                          objectFit: "cover",
+                        }}
+                      />
+                      <h4>{selectedWorker.name}</h4>
+                      <p className="text-muted">{selectedWorker.category}</p>
+                      <span
+                        className={`badge ${
+                          selectedWorker.availability
+                            ? "bg-success"
+                            : "bg-danger"
+                        }`}
                       >
-                        احجز الآن
-                      </button>
+                        {selectedWorker.availability ? "متاح" : "مشغول"}
+                      </span>
+                    </div>
+
+                    {/* التفاصيل */}
+                    <div className="col-md-8">
+                      <div className="row">
+                        {/* الجنسية */}
+                        <div className="col-md-6 mb-3">
+                          <h6>الجنسية</h6>
+                          <p className="text-muted">
+                            {selectedWorker.nationality}
+                          </p>
+                        </div>
+
+                        {/* العمر */}
+                        <div className="col-md-6 mb-3">
+                          <h6>العمر</h6>
+                          <p className="text-muted">{selectedWorker.age} سنة</p>
+                        </div>
+
+                        {/* الخبرة */}
+                        <div className="col-md-6 mb-3">
+                          <h6>الخبرة</h6>
+                          <p className="text-muted">
+                            {selectedWorker.experience} سنوات
+                          </p>
+                        </div>
+
+                        {/* التقييم */}
+                        <div className="col-md-6 mb-3">
+                          <h6>التقييم</h6>
+                          <p className="text-muted">
+                            {selectedWorker.rating} / 5 (
+                            {selectedWorker.reviews || 0} تقييمات)
+                          </p>
+                        </div>
+
+                        {/* الراتب */}
+                        <div className="col-md-6 mb-3">
+                          <h6>الراتب</h6>
+                          <p className="text-muted">
+                            {selectedWorker.salary} ريال
+                          </p>
+                        </div>
+
+                        {/* الموقع */}
+                        <div className="col-md-6 mb-3">
+                          <h6>الموقع</h6>
+                          <p className="text-muted">
+                            {selectedWorker.location}
+                          </p>
+                        </div>
+
+                        {/* المهارات */}
+                        <div className="col-12 mb-3">
+                          <h6>المهارات</h6>
+                          <div className="d-flex flex-wrap gap-2">
+                            {selectedWorker.skills.map((skill, index) => (
+                              <span key={index} className="badge ">
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* اللغات */}
+                        <div className="col-12 mb-3">
+                          <h6>اللغات</h6>
+                          <div className="d-flex flex-wrap gap-2">
+                            {selectedWorker.languages.map((language, index) => (
+                              <span key={index} className="badge ">
+                                {language}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                </div>
+
+                {/* زر الحجز */}
+                <div className="modal-footer">
+                  <button
+                    className="btn btn-primary w-100"
+                    onClick={() => handleBookWorker(selectedWorker.id)}
+                  >
+                    احجز الآن
+                  </button>
                 </div>
               </div>
             </div>
