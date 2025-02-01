@@ -1,64 +1,72 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import "../assets/css/Home.css";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top">
       <div className="container">
-        <a className="navbar-brand" href="index.html">
+        <NavLink className="navbar-brand" to="/">
           <img src="images/logo.svg" alt="شعار المنصة" height={40} />
-        </a>
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          onClick={toggleNavbar}
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div
+          className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
+          id="navbarNav"
+        >
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <a className="nav-link " href="./index.html">
+              <NavLink className="nav-link" to="/" activeClassName="active" exact>
                 الرئيسية
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="index.html#services">
+              <NavLink className="nav-link" to="/services" activeClassName="active">
                 خدماتنا
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="./workers.html">
+              <NavLink className="nav-link" to="/workers" activeClassName="active">
                 العمالة
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="./about.html">
+              <NavLink className="nav-link" to="/about" activeClassName="active">
                 عن المنصة
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="./Contact-Us.html">
+              <NavLink className="nav-link" to="/contact-us" activeClassName="active">
                 اتصل بنا
-              </a>
+              </NavLink>
             </li>
           </ul>
           <div className="nav-buttons">
-            {/* إضافة أيقونة لوحة التحكم */}
-            <a
-              href="./client-dashboard.html"
+            <NavLink
+              to="/client-dashboard"
               className="btn btn-outline-primary me-2"
             >
-              <i className="fas fa-tachometer-alt" /> لوحة التحكم
-            </a>
-            <a href="./login.html" className="btn btn-outline-primary me-2">
+                 <i className="fas fa-tachometer-alt" />  لوحة التحكم
+            </NavLink>
+            <NavLink to="/login" className="btn btn-outline-primary me-2">
               تسجيل الدخول
-            </a>
-            <a href="./register.html" className="btn btn-primary">
+            </NavLink>
+            <NavLink to="/register" className="btn btn-primary">
               إنشاء حساب
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>
