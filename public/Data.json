@@ -28,7 +28,7 @@
       "image": "worker2.jpg",
       "skills": ["طبخ", "تنظيف", "رعاية أطفال"],
       "languages": ["الإنجليزية", "العربية البسيطة"],
-      "availability": true
+      "availability": false
     },
     {
       "id": 3,
@@ -73,7 +73,7 @@
       "image": "worker1.jpg",
       "skills": ["قيادة الشاحنات", "خبرة في الطرق الطويلة"],
       "languages": ["العربية"],
-      "availability": true
+      "availability": false
     },
     {
       "id": 6,
@@ -103,7 +103,7 @@
       "image": "worker1.jpg",
       "skills": ["دهان", "تركيب بلاط", "تشطيب"],
       "languages": ["العربية"],
-      "availability": true
+      "availability": false
     },
     {
       "id": 8,
@@ -148,7 +148,7 @@
       "image": "worker2.jpg",
       "skills": ["تنظيف", "رعاية أطفال", "طبخ بسيط"],
       "languages": ["الإنجليزية", "العربية البسيطة"],
-      "availability": true
+      "availability": false
     }
   ],
   "categories": [
