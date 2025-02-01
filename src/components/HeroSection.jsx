@@ -24,7 +24,7 @@ const HeroSection = () => {
               نوفر لك أفضل العمالة المنزلية المدربة والموثوقة مع ضمان حقوق جميع
               الأطراف
             </p>
-            <div className="hero-search">
+            {/* <div className="hero-search">
               <form className="search-form">
                 <div className="row g-2">
                   <div className="col-md-5">
@@ -52,7 +52,7 @@ const HeroSection = () => {
                   </div>
                 </div>
               </form>
-            </div>
+            </div> */}
           </div>
           <div className="col-lg-6" data-aos="fade-left">
             <img
