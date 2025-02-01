@@ -5,7 +5,6 @@ import FeaturesSection from "../components/FeaturesSection";
 import HowItWorksSection from "../components/HowItWorksSection";
 import "../assets/css/Home.css";
 import BackToTopButton from "../components/BackToTopButton";
-import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -15,7 +14,6 @@ const HomePage = () => {
       <FeaturesSection/>
       <HowItWorksSection/>
       <BackToTopButton />
-      <Footer/>
 
     </>
   );
