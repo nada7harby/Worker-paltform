@@ -1,18 +1,13 @@
-import React from "react";
-
 const FeaturesSection = () => {
   return (
     <section className="features-section">
       <div className="container">
-        {/* Section Header */}
         <div className="section-header text-center" data-aos="fade-up">
           <h2>مميزاتنا </h2>
           <p>نقدم لك مجموعة من المميزات الفريدة</p>
         </div>
 
-        {/* Features Grid */}
         <div className="row g-4">
-          {/* Feature 1: Security */}
           <div className="col-md-4" data-aos="fade-up" data-aos-delay={100}>
             <div className="feature-card">
               <div className="feature-icon">
