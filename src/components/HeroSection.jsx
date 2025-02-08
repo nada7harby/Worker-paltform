@@ -17,7 +17,7 @@ const HeroSection = () => {
         <div className="row align-items-center">
           <div className="col-lg-6" data-aos="fade-up">
             <h1 className="hero-title">
-              ابحث عن <span className="text-primary">العمالة المنزلية</span>
+              ابحث عن <span className="text-primary">العمالة المنزلية </span>
               بكل سهولة وأمان
             </h1>
             <p className="hero-subtitle">

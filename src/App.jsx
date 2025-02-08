@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import HomePage from "./pages/HomePage";
 import Workers from "./pages/Workers";
 import Footer from "./components/Footer";
+import Booking from "./pages/Booking";
 
 const App = () => {
   useEffect(() => {
@@ -20,6 +21,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/workers" element={<Workers />} />
+        <Route path="/Booking" element={<Booking />} />
       </Routes>
       <Footer />
     </Router>

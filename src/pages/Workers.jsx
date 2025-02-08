@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // استيراد useNavigate للتوجيه
 import "../assets/css/workers.css";
+
 const Workers = () => {
-  const [workers, setWorkers] = useState([]); // بيانات العمال
-  const [filteredWorkers, setFilteredWorkers] = useState([]); // العمال بعد التصفية
-  const [selectedWorker, setSelectedWorker] = useState(null); // العامل المحدد لعرض التفاصيل
-  // const [filters, setFilters] = useState({
-  //   serviceType: "الكل",
-  //   nationality: "الكل",
-  //   experience: "الكل",
-  //   salary: "الكل",
-  // });
-  const [isLoading, setIsLoading] = useState(true); // حالة التحميل
+  const [workers, setWorkers] = useState([]);
+  const [filteredWorkers, setFilteredWorkers] = useState([]);
+  const [selectedWorker, setSelectedWorker] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [expandedWorkerId, setExpandedWorkerId] = useState(null);
   const [filters, setFilters] = useState({
-    serviceType: "الكل", // نوع الخدمة
-    skills: [], // المهارات المحددة
+    serviceType: "الكل",
+    skills: [],
   });
+
+  const navigate = useNavigate(); // تهيئة useNavigate
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,22 +31,6 @@ const Workers = () => {
     fetchData();
   }, []);
 
-  // useEffect(() => {
-  //   const filtered = workers.filter((worker) => {
-  //     return (
-  //       (filters.serviceType === "الكل" ||
-  //         worker.category === filters.serviceType) &&
-  //       (filters.nationality === "الكل" ||
-  //         worker.nationality === filters.nationality) &&
-  //       (filters.experience === "الكل" ||
-  //         checkExperience(worker.experience, filters.experience)) &&
-  //       (filters.salary === "الكل" ||
-  //         checkSalary(worker.salary, filters.salary))
-  //     );
-  //   });
-  //   setFilteredWorkers(filtered);
-  // }, [filters, workers]);
-
   useEffect(() => {
     const filtered = workers.filter((worker) => {
       const matchesServiceType =
@@ -64,20 +46,10 @@ const Workers = () => {
 
     setFilteredWorkers(filtered);
   }, [filters, workers]);
-  // تغيير الفلاتر
+
   const handleFilterChange = (e) => {
     const { id, value } = e.target;
     setFilters({ ...filters, [id]: value });
-  };
-
-  // مسح الفلاتر
-  const clearFilters = () => {
-    setFilters({
-      serviceType: "الكل",
-      nationality: "الكل",
-      experience: "الكل",
-      salary: "الكل",
-    });
   };
 
   const handleSkillChange = (e) => {
@@ -96,37 +68,17 @@ const Workers = () => {
       }
     });
   };
-  // عرض تفاصيل العامل
+
   const handleShowDetails = (workerId) => {
     setExpandedWorkerId(expandedWorkerId === workerId ? null : workerId);
   };
 
-  // حجز العامل
+  // دالة حجز العامل
   const handleBookWorker = (workerId) => {
-    alert(`تم حجز العامل رقم ${workerId}`);
-    setSelectedWorker(null);
+    const worker = workers.find((w) => w.id === workerId);
+    navigate("/booking", { state: { worker } }); // توجيه إلى صفحة الحجز مع تفاصيل العامل
   };
 
-  // إغلاق النموذج
-  const handleCloseModal = () => {
-    setSelectedWorker(null);
-  };
-
-  // التحقق من الخبرة
-  const checkExperience = (workerExperience, filter) => {
-    const [min, max] = filter.split("-").map(Number);
-    if (filter.endsWith("+")) return workerExperience >= min;
-    return workerExperience >= min && workerExperience <= max;
-  };
-
-  // التحقق من الراتب
-  const checkSalary = (workerSalary, filter) => {
-    const [min, max] = filter.split("-").map(Number);
-    if (filter.endsWith("+")) return workerSalary >= min;
-    return workerSalary >= min && workerSalary <= max;
-  };
-
-  // إنشاء نجوم التقييم
   const generateStars = (rating) => {
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
@@ -148,7 +100,6 @@ const Workers = () => {
           <h1>نتائج البحث</h1>
           <div className="search-filters">
             <div className="row g-3 align-items-center">
-              {/* Dropdown لتحديد نوع الخدمة */}
               <div className="col-md-3">
                 <select
                   className="form-select"
@@ -163,7 +114,6 @@ const Workers = () => {
                 </select>
               </div>
 
-              {/* Checkbox لتحديد المهارات */}
               <div className="col-md-9">
                 <div className="skills-checkbox">
                   <label>
@@ -226,7 +176,6 @@ const Workers = () => {
           </div>
         </div>
 
-        {/* عرض العمال */}
         {isLoading ? (
           <div className="text-center mt-5">
             <div className="spinner-border text-primary" role="status">
@@ -294,6 +243,7 @@ const Workers = () => {
                           ? "إخفاء التفاصيل"
                           : "عرض التفاصيل"}
                       </button>
+                      {/* زر الحجز */}
                     </div>
                     {expandedWorkerId === worker.id && (
                       <div
@@ -351,147 +301,21 @@ const Workers = () => {
                               ))}
                             </div>
                           </div>
+                          {/* زر الحجز بعد اللغات */}
+                          <div className="col-12 text-center">
+                            <button
+                              className="btn btn-success"
+                              onClick={() => handleBookWorker(worker.id)}
+                            >
+                              حجز
+                            </button>
+                          </div>
                         </div>
                       </div>
                     )}
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        )}
-
-        {/* نموذج تفاصيل العامل */}
-        {selectedWorker && (
-          <div
-            className="modal fade show"
-            style={{ display: "block", backgroundColor: "rgba(0,0,0,0.5)" }}
-          >
-            <div className="modal-dialog modal-lg">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title">تفاصيل العامل</h5>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    onClick={handleCloseModal}
-                  ></button>
-                </div>
-                <div className="modal-body">
-                  <div className="row">
-                    {/* الصورة */}
-                    <div className="col-md-4 text-center">
-                      <img
-                        src={`images/${selectedWorker.image}`}
-                        alt={selectedWorker.name}
-                        className="img-fluid rounded-circle mb-3"
-                        style={{
-                          width: "150px",
-                          height: "150px",
-                          objectFit: "cover",
-                        }}
-                      />
-                      <h4>{selectedWorker.name}</h4>
-                      <p className="text-muted">{selectedWorker.category}</p>
-                      <span
-                        className={`badge ${
-                          selectedWorker.availability
-                            ? "bg-success"
-                            : "bg-danger"
-                        }`}
-                      >
-                        {selectedWorker.availability ? "متاح" : "مشغول"}
-                      </span>
-                    </div>
-
-                    {/* التفاصيل */}
-                    <div className="col-md-8">
-                      <div className="row">
-                        {/* الجنسية */}
-                        <div className="col-md-6 mb-3">
-                          <h6>الجنسية</h6>
-                          <p className="text-muted">
-                            {selectedWorker.nationality}
-                          </p>
-                        </div>
-
-                        {/* العمر */}
-                        <div className="col-md-6 mb-3">
-                          <h6>العمر</h6>
-                          <p className="text-muted">{selectedWorker.age} سنة</p>
-                        </div>
-
-                        {/* الخبرة */}
-                        <div className="col-md-6 mb-3">
-                          <h6>الخبرة</h6>
-                          <p className="text-muted">
-                            {selectedWorker.experience} سنوات
-                          </p>
-                        </div>
-
-                        {/* التقييم */}
-                        <div className="col-md-6 mb-3">
-                          <h6>التقييم</h6>
-                          <p className="text-muted">
-                            {selectedWorker.rating} / 5 (
-                            {selectedWorker.reviews || 0} تقييمات)
-                          </p>
-                        </div>
-
-                        {/* الراتب */}
-                        <div className="col-md-6 mb-3">
-                          <h6>الراتب</h6>
-                          <p className="text-muted">
-                            {selectedWorker.salary} ريال
-                          </p>
-                        </div>
-
-                        {/* الموقع */}
-                        <div className="col-md-6 mb-3">
-                          <h6>الموقع</h6>
-                          <p className="text-muted">
-                            {selectedWorker.location}
-                          </p>
-                        </div>
-
-                        {/* المهارات */}
-                        <div className="col-12 mb-3">
-                          <h6>المهارات</h6>
-                          <div className="d-flex flex-wrap gap-2">
-                            {selectedWorker.skills.map((skill, index) => (
-                              <span key={index} className="badge ">
-                                {skill}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* اللغات */}
-                        <div className="col-12 mb-3">
-                          <h6>اللغات</h6>
-                          <div className="d-flex flex-wrap gap-2">
-                            {selectedWorker.languages.map((language, index) => (
-                              <span key={index} className="badge ">
-                                {language}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* زر الحجز */}
-                <div className="modal-footer">
-                  <button
-                    className="btn btn-primary w-100"
-                    onClick={() => handleBookWorker(selectedWorker.id)}
-                  >
-                    احجز الآن
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         )}
