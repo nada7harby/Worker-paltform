@@ -24,7 +24,11 @@ const ServiceForm = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "rgb(0 121 96 / 19%)" }}>
+    <div
+      style={{ backgroundColor: "rgb(0 121 96 / 19%)" }}
+      data-aos="fade-up"
+      data-aos-duration={1000}
+    >
       <div className="container my-5">
         <div className="p-4">
           <h2 className="text-center mb-4">إضافة خدمات</h2>
