@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
+import Header from  "./components/Navbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import HomePage from "./pages/HomePage";
@@ -17,7 +18,7 @@ const App = () => {
   }, []);
   return (
     <Router>
-      <Navbar />
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/workers" element={<Workers />} />

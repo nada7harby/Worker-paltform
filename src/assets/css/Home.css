@@ -345,7 +345,7 @@ body {
 }
 
 .step-content h3 {
-  color: var(--primary-color);
+  color: #fff;
   margin-bottom: 10px;
   font-size: 1.5rem;
 }

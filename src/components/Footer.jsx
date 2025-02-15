@@ -1,121 +1,282 @@
-import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
-
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-waves">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#f8f9fa"
-            fillOpacity="1"
-            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-          ></path>
-        </svg>
-      </div>
+    <footer className="text-white pt-5 pb-4">
       <div className="container">
-        <div className="row g-4">
-          <div className="col-lg-4">
-            <div className="footer-about">
-              <img
-                src="images/logo.svg"
-                alt="شعار المنصة"
-                className="footer-logo"
-              />
-              <p>
-                منصة متخصصة في توفير خدمات العمالة المنزلية بطريقة آمنة وموثوقة
-              </p>
-              <div className="social-links">
-                <a href="#" className="social-link">
-                  <FaFacebookF />
-                </a>
-                <a href="#" className="social-link">
-                  <FaTwitter />
-                </a>
-                <a href="#" className="social-link">
-                  <FaInstagram />
-                </a>
-                <a href="#" className="social-link">
-                  <FaLinkedinIn />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-2">
-            <h4>روابط سريعة</h4>
-            <ul className="footer-links">
+        <div className="px-3 px-md-0 row justify-content-around">
+          <div className="col-12 col-md-2">
+            <label
+              className="border-1 border-bottom w-100 pb-2"
+              htmlFor="publicView"
+            >
+              نظرة عامة
+            </label>
+            <ul
+              id="publicView"
+              className="list-unstyled fs-14px lh-lg mt-2 ps-0"
+            >
               <li>
-                <a href="./index.html">الرئيسية</a>
+                <a
+                  href="/home/about"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  عن ماهن
+                </a>
               </li>
               <li>
-                <a href="index.html#services">خدماتنا</a>
+                <a
+                  href="/committee"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  طلب الاستقدام
+                </a>
               </li>
               <li>
-                <a href="#about">عن المنصة</a>
+                <a
+                  href="/smsdonation"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  نقل الخدمات
+                </a>
               </li>
               <li>
-                <a href="#contact">اتصل بنا</a>
+                <a
+                  href="/smsdonation"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  العقود الشهرية
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/smsdonation"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  العقود بالساعة
+                </a>
               </li>
             </ul>
           </div>
 
-          <div className="col-lg-3">
-            <h4>خدمات المنصة</h4>
-            <ul className="footer-links">
+          <div className="col-12 col-md-2">
+            <label
+              className="border-1 border-bottom w-100 pb-2"
+              htmlFor="publicView"
+            >
+              الدعم والمساعدة
+            </label>
+            <ul
+              id="publicView"
+              className="list-unstyled fs-14px lh-lg mt-2 ps-0"
+            >
               <li>
-                <a href="#">سائق خاص</a>
+                <a
+                  className="footer-link text-decoration-none text-white"
+                  href="/serviceagreement"
+                >
+                  اتفاقية مستوى الخدمة
+                </a>
               </li>
               <li>
-                <a href="#">عاملة منزلية</a>
+                <a
+                  href="/home/faq"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  الأسئلة الشائعة{" "}
+                </a>
               </li>
               <li>
-                <a href="#">طباخ/طباخة</a>
+                <a
+                  href="/privacy"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  سياسة الخصوصية{" "}
+                </a>
               </li>
               <li>
-                <a href="#">مربية أطفال</a>
+                <a
+                  href="/accessibility"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  سهولة الوصول{" "}
+                </a>
               </li>
             </ul>
           </div>
-
-          <div className="col-lg-3">
-            <h4>تواصل معنا</h4>
-            <ul className="footer-contact">
+          <div className="col-12 col-md-2">
+            <label
+              className="border-1 border-bottom w-100 pb-2"
+              htmlFor="publicView"
+            >
+              روابط تهمك{" "}
+            </label>
+            <ul
+              id="publicView"
+              className="list-unstyled fs-14px lh-lg mt-2 ps-0"
+            >
               <li>
-                <FaMapMarkerAlt />
-                <span>الرياض، المملكة العربية السعودية</span>
+                <a
+                  href="/home/about"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  وزار الخارجيه
+                </a>
               </li>
               <li>
-                <FaPhone />
-                <span>+966 50 123 4567</span>
+                <a
+                  href="/committee"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  البشر
+                </a>
               </li>
               <li>
-                <FaEnvelope />
-                <span>info@example.com</span>
+                <a
+                  href="/smsdonation"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  وزاره الموارد البشريةوالتنميه{" "}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/smsdonation"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  مساند{" "}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/smsdonation"
+                  className="footer-link text-decoration-none text-white"
+                >
+                  الجوازات{" "}
+                </a>
               </li>
             </ul>
           </div>
-        </div>
-
-        <div className="footer-bottom">
-          <div className="row">
-            <div className="col-md-6">
-              <p className="copyright">
-                جميع الحقوق محفوظة &copy; 2024 منصة خدمات العمالة
-              </p>
-            </div>
-            <div className="col-md-6">
-              <ul className="footer-bottom-links">
-                <li>
-                  <a href="#">سياسة الخصوصية</a>
+          <div className="col-12 col-md-2 d-flex flex-md-column flex-row justify-content-between mt-3 mt-md-0">
+            <div className="col me-2 me-md-0">
+              <label
+                className="border-1 border-bottom w-100 pb-2"
+                htmlFor="publicView"
+              >
+                تواصل معنا
+              </label>
+              <ul id="publicView" className="list-inline mt-2 ps-0">
+                <li className="list-inline-item  ms-0">
+                  <a
+                    href="https://x.com/Ehsansa"
+                    className="align-items-center btn btn-md btn-outline-white d-flex footer-link h-40px h-sm-32px justify-content-center p-0 text-decoration-none text-white w-40px w-sm-32px"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={17}
+                      height={17}
+                      viewBox="0 0 17 17"
+                      fill="none"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M0.610183 0.96742C0.717033 0.758447 0.931953 0.626953 1.16666 0.626953H5.33333C5.53402 0.626953 5.7225 0.723326 5.84 0.886022L9.95333 6.5814L15.7247 0.810011C15.9688 0.565934 16.3645 0.565934 16.6086 0.810011C16.8527 1.05409 16.8527 1.44982 16.6086 1.69389L10.6946 7.60784L16.6733 15.886C16.8108 16.0763 16.83 16.3275 16.7231 16.5365C16.6163 16.7455 16.4014 16.877 16.1667 16.877H12C11.7993 16.877 11.6108 16.7806 11.4933 16.6179L7.37999 10.9225L1.6086 16.6939C1.36452 16.938 0.968795 16.938 0.724717 16.6939C0.48064 16.4498 0.48064 16.0541 0.724717 15.81L6.63867 9.89606L0.659985 1.61788C0.522567 1.42761 0.503332 1.17639 0.610183 0.96742ZM2.38901 1.87695L12.3196 15.627H14.9443L5.01376 1.87695H2.38901Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
                 </li>
-                <li>
-                  <a href="#">الشروط والأحكام</a>
+                <li className="list-inline-item">
+                  <a
+                    href="tel:8001247000"
+                    className="align-items-center btn btn-md btn-outline-white d-flex footer-link h-40px h-sm-32px justify-content-center p-0 text-decoration-none text-white w-40px w-sm-32px"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={19}
+                      height={19}
+                      viewBox="0 0 19 19"
+                      fill="none"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M4.09727 0.82393C4.56951 0.921534 4.94559 1.23882 5.17925 1.65801L5.92359 2.99338C6.19776 3.48521 6.42849 3.89912 6.57917 4.25893C6.73901 4.64061 6.83394 5.01699 6.79054 5.43313C6.74715 5.84926 6.5766 6.19796 6.34146 6.53845C6.11978 6.85943 5.80862 7.21683 5.43887 7.64151L3.58232 9.77404C5.05469 12.1873 7.2288 14.3624 9.6446 15.8363L11.7771 13.9798C12.2018 13.61 12.5592 13.2989 12.8802 13.0772C13.2207 12.842 13.5694 12.6715 13.9855 12.6281C14.4016 12.5847 14.778 12.6796 15.1597 12.8395C15.5195 12.9901 15.9334 13.2209 16.4253 13.4951L17.7606 14.2394C18.1798 14.473 18.4971 14.8491 18.5947 15.3214C18.6933 15.7985 18.5479 16.2782 18.2266 16.6724C17.0608 18.1027 15.1931 19.0133 13.2337 18.6181C12.0293 18.3752 10.841 17.9704 9.40376 17.1461C6.51597 15.49 3.92674 12.8993 2.27251 10.0149C1.44825 8.57762 1.04349 7.38929 0.800533 6.18491C0.405286 4.22556 1.31598 2.35782 2.74628 1.19207C3.14048 0.870783 3.6201 0.725307 4.09727 0.82393ZM10.8089 16.48C11.7809 16.959 12.6263 17.2204 13.4809 17.3928C14.8943 17.6779 16.3212 17.0316 17.2576 15.8826C17.3806 15.7318 17.3813 15.6265 17.3706 15.5744C17.3588 15.5174 17.3111 15.4199 17.152 15.3312L15.8466 14.6036C15.3169 14.3083 14.9643 14.1128 14.6769 13.9924C14.4041 13.8782 14.2475 13.8575 14.1152 13.8714C13.9828 13.8852 13.8339 13.9377 13.5905 14.1057C13.3341 14.2828 13.0294 14.5469 12.572 14.9451L10.8089 16.48ZM2.9386 8.60976L4.47358 6.84659C4.87178 6.38921 5.13584 6.0845 5.3129 5.82812C5.48097 5.58475 5.53348 5.43584 5.54729 5.30348C5.56109 5.17111 5.54043 5.01457 5.42619 4.74177C5.30584 4.45437 5.11032 4.10173 4.81506 3.57203L4.08741 2.26661C3.99876 2.10757 3.90128 2.05984 3.84426 2.04806C3.79218 2.03729 3.68687 2.03805 3.53601 2.16101C2.38702 3.09747 1.74074 4.52436 2.02585 5.93773C2.19825 6.79238 2.45966 7.63778 2.9386 8.60976Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="col ms-2 ms-md-0">
+              <label
+                className="border-1 border-bottom w-100 pb-2"
+                htmlFor="publicView"
+              >
+                حمل تطبيق إحسان
+              </label>
+              <ul id="publicView" className="list-inline mt-2 ps-0">
+                <li className="list-inline-item ms-0">
+                  <a
+                    href="https://apps.apple.com/us/app/ehsan-%D8%A5%D8%AD%D8%B3%D8%A7%D9%86/id1602515092"
+                    className="align-items-center btn btn-md btn-outline-white d-flex footer-link h-40px h-sm-32px justify-content-center p-0 text-decoration-none text-white w-40px w-sm-32px"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={15}
+                      height={19}
+                      viewBox="0 0 15 19"
+                      fill="none"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M4.86703 5.79346C3.61183 5.79346 2.46742 6.3265 1.64882 7.32744C0.8367 8.32046 0.375 9.73403 0.375 11.4679C0.375 12.9637 0.871624 14.5383 1.60358 15.8236C2.32491 17.0903 3.34213 18.1911 4.47154 18.5959C5.43153 18.9399 6.33443 18.4408 6.904 18.0326C7.09566 17.8952 7.29373 17.7712 7.47847 17.6836C7.67176 17.592 7.80326 17.5631 7.87472 17.5631C7.94618 17.5631 8.07768 17.592 8.27097 17.6836C8.45571 17.7712 8.65377 17.8952 8.84544 18.0326C9.41501 18.4408 10.3179 18.9399 11.2779 18.5959C12.0889 18.3052 12.8333 17.6585 13.4444 16.8758C14.0624 16.0842 14.5827 15.1047 14.9264 14.0719C14.9801 13.9103 14.9656 13.7337 14.8862 13.583C14.8067 13.4323 14.6692 13.3206 14.5054 13.2737C13.5095 12.9885 12.7964 12.0924 12.7964 11.0471C12.7964 10.0892 13.3944 9.2574 14.2619 8.9046C14.4282 8.83698 14.5574 8.70112 14.6166 8.53164C14.6757 8.36216 14.6592 8.17542 14.5711 8.019C13.7636 6.58481 12.4136 5.79346 10.8824 5.79346C10.0462 5.79346 9.31106 6.1285 8.75766 6.48868C8.17073 6.87069 7.57871 6.87069 6.99178 6.48868C6.43838 6.1285 5.70321 5.79346 4.86703 5.79346ZM1.625 11.4679C1.625 9.94826 2.02896 8.83711 2.61643 8.11878C3.19743 7.40837 3.98653 7.04346 4.86703 7.04346C5.37134 7.04346 5.86811 7.24878 6.30992 7.53633C7.31139 8.18814 8.43805 8.18814 9.43952 7.53633C9.88132 7.24878 10.3781 7.04346 10.8824 7.04346C11.7485 7.04346 12.5369 7.3976 13.1214 8.10449C12.1736 8.74605 11.5464 9.82125 11.5464 11.0471C11.5464 12.4434 12.3593 13.6435 13.5343 14.2312C13.2476 14.9277 12.8754 15.5734 12.4591 16.1066C11.9273 16.7878 11.3612 17.2382 10.8562 17.4192C10.532 17.5354 10.1076 17.3993 9.57362 17.0166C9.3467 16.854 9.08204 16.6848 8.80636 16.5541C8.53923 16.4275 8.21262 16.3131 7.87472 16.3131C7.53682 16.3131 7.21021 16.4275 6.94308 16.5541C6.6674 16.6848 6.40274 16.854 6.17582 17.0166C5.64188 17.3993 5.21746 17.5354 4.89328 17.4192C4.17066 17.1602 3.34667 16.3585 2.6898 15.2051C2.04356 14.0702 1.625 12.7069 1.625 11.4679Z"
+                        fill="white"
+                      />
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M11.5881 1.3697C11.5949 1.43576 11.6125 1.60453 11.6175 1.69874C11.6279 1.89571 11.6313 2.16956 11.6024 2.47764C11.5469 3.07088 11.3618 3.90279 10.7564 4.50819C10.151 5.11359 9.31909 5.29873 8.72585 5.35423C8.41777 5.38306 8.14392 5.37967 7.94695 5.36926C7.85207 5.36424 7.68284 5.34665 7.6179 5.33991L7.60998 5.33908L7.60903 5.33895C7.33525 5.29915 7.11937 5.08362 7.07957 4.80985L7.07861 4.80057C7.07174 4.73453 7.05418 4.56573 7.0492 4.47151C7.03879 4.27454 7.0354 4.00069 7.06423 3.69261C7.11973 3.09937 7.30486 2.26746 7.91027 1.66206C8.51567 1.05666 9.34758 0.871519 9.94082 0.816017C10.2489 0.787192 10.5227 0.790582 10.7197 0.800993C10.8141 0.805982 10.9831 0.823549 11.0488 0.830384L11.0576 0.831304C11.3314 0.871096 11.5473 1.08663 11.5871 1.3604L11.5881 1.3697ZM10.0573 2.06019C9.56812 2.10595 9.09186 2.24785 8.79416 2.54555C8.49647 2.84324 8.35457 3.3195 8.3088 3.80865C8.2983 3.92094 8.29341 4.02807 8.29207 4.126C8.39001 4.12466 8.49714 4.11978 8.60942 4.10927C9.09857 4.06351 9.57483 3.9216 9.87253 3.62391C10.1702 3.32621 10.3121 2.84995 10.3579 2.36081C10.3684 2.24852 10.3733 2.14139 10.3746 2.04346C10.2767 2.0448 10.1696 2.04968 10.0573 2.06019Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li className="list-inline-item">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=sa.gov.sdaia.ehsan"
+                    className="align-items-center btn btn-md btn-outline-white d-flex footer-link h-40px h-sm-32px justify-content-center p-0 text-decoration-none text-white w-40px w-sm-32px"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={15}
+                      height={19}
+                      viewBox="0 0 15 19"
+                      fill="none"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M10.7917 18.0854V16.1952C10.9395 16.1876 11.0775 16.1762 11.2049 16.159C11.6146 16.1039 12.0073 15.9797 12.3258 15.6612C12.6444 15.3427 12.7686 14.9499 12.8236 14.5402C12.875 14.158 12.875 13.6805 12.875 13.1265L12.875 7.6687C12.875 5.68035 11.7608 3.95223 10.1227 3.07465L11.0834 1.79374C11.2905 1.5176 11.2345 1.12585 10.9584 0.918737C10.6822 0.711631 10.2905 0.767596 10.0834 1.04374L8.90906 2.60947C8.51092 2.51203 8.09482 2.46037 7.66665 2.46037C7.23851 2.46037 6.82243 2.51203 6.42431 2.60946L5.25002 1.04374C5.04291 0.767596 4.65116 0.711631 4.37502 0.918737C4.09888 1.12585 4.04291 1.5176 4.25002 1.79374L5.21068 3.07462C3.57255 3.95219 2.45832 5.68033 2.45832 7.6687L2.45832 8.08345L2.45832 8.08537L2.45832 8.08728L2.45832 13.1265C2.45829 13.6806 2.45826 14.158 2.50966 14.5402C2.56474 14.9499 2.68896 15.3427 3.0075 15.6612C3.32603 15.9797 3.71875 16.1039 4.12845 16.159C4.25585 16.1762 4.39381 16.1876 4.54165 16.1952L4.54165 18.0854C4.54165 18.4305 4.82147 18.7104 5.16665 18.7104C5.51183 18.7104 5.79165 18.4305 5.79165 18.0854L5.79165 16.2104H9.54165V18.0854C9.54165 18.4305 9.82147 18.7104 10.1667 18.7104C10.5118 18.7104 10.7917 18.4305 10.7917 18.0854ZM7.66665 3.71037C5.55041 3.71037 3.82205 5.37108 3.71371 7.46037L11.6196 7.46037C11.5113 5.37108 9.7829 3.71037 7.66665 3.71037ZM11.625 13.0854L11.625 8.71037L3.70832 8.71037L3.70832 13.0854C3.70832 13.6923 3.70965 14.0846 3.74851 14.3737C3.78496 14.6448 3.8438 14.7297 3.89138 14.7773C3.93896 14.8249 4.02392 14.8837 4.29501 14.9202C4.58408 14.959 4.9764 14.9604 5.58332 14.9604H9.74999C10.3569 14.9604 10.7492 14.959 11.0383 14.9202C11.3094 14.8837 11.3944 14.8249 11.4419 14.7773C11.4895 14.7297 11.5483 14.6448 11.5848 14.3737C11.6237 14.0846 11.625 13.6923 11.625 13.0854Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M0.999985 8.2937C1.34516 8.2937 1.62498 8.57352 1.62498 8.9187L1.62498 13.9187C1.62498 14.2639 1.34516 14.5437 0.999985 14.5437C0.654807 14.5437 0.374985 14.2639 0.374985 13.9187L0.374985 8.9187C0.374985 8.57352 0.654807 8.2937 0.999985 8.2937Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M14.9583 8.9187C14.9583 8.57352 14.6785 8.2937 14.3333 8.2937C13.9881 8.2937 13.7083 8.57352 13.7083 8.9187L13.7083 13.9187C13.7083 14.2639 13.9881 14.5437 14.3333 14.5437C14.6785 14.5437 14.9583 14.2639 14.9583 13.9187L14.9583 8.9187Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
+        
       </div>
     </footer>
   );

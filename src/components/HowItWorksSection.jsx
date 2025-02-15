@@ -4,31 +4,32 @@ const HowItWorksSection = () => {
   const steps = [
     {
       number: "1",
-      title: "إنشاء حساب",
-      description:
-        "     قم بإنشاء حساب جديد وأكمل بياناتك الشخصية لتتمكن من الوصول إلى جميع الخدمات",
+      title: "خدمات متخصصة",
+      icon: "fa-solid fa-sliders", // أيقونة الخطوة الثانية
       delay: "100",
+      color: "#1143c4",
     },
     {
       number: "2",
-      title: "اختيار  العمالة المناسبة",
-      description:
-        "تصفح قوائم العمالة المتاحة واختر العاملين الذين يتناسبون مع احتياجاتك ومتطلباتك",
-      delay: "200",
+      title: "ثقه والمصداقيه  ",
+      icon: "fa-solid fa-shield-halved",
+      delay: "300",
+      color: "#007960",
     },
     {
       number: "3",
-      title: "تقديم طلب التوظيف",
-      description:
-        "قم بتقديم طلب توظيف للعمالة المختارة وانتظر الموافقة من قبل مقدم الخدمة",
-      delay: "300",
+      title: "الكفاءه العاليه  ",
+      icon: "fa-solid fa-chart-line",
+      delay: "200",
+      color: "#11abf3",
     },
+
     {
       number: "4",
-      title: " بدء العمل",
-      description:
-        "بعد الموافقة على طلبك، يتم توفير العمالة المطلوبة ويمكنك بدء العمل معهم فورًا",
+      title: " سرعه الوصول",
+      icon: "fa-solid fa-stopwatch", // أيقونة الخطوة الرابعة
       delay: "400",
+      color: "#0e80b5",
     },
   ];
 
@@ -37,8 +38,13 @@ const HowItWorksSection = () => {
       <div className="container">
         {/* العنوان والوصف */}
         <div className="section-header text-center" data-aos="fade-up">
-          <h2>كيف تعمل المنصة؟</h2>
-          <p>خطوات بسيطة للحصول على العمالة المطلوبة</p>
+          <h3>من نحن</h3>
+          <h1> شركة ماهن للاستقدام</h1>
+          <p className="fs-18px ">
+            كشركه رائده في تقديم الحلول العماله المنزلية في المملكه نقدم خدماتنا
+            لافراد و الشركات علي حد سواء مع التركيز علي تلبيه احتايجاتكم بكل
+            اخترافيه ومهاره
+          </p>
         </div>
 
         {/* الخطوات */}
@@ -49,11 +55,13 @@ const HowItWorksSection = () => {
               key={index}
               data-aos="fade-up"
               data-aos-delay={step.delay}
+             
             >
-              <div className="step-number">{step.number}</div>
-              <div className="step-content">
-                <h3 style={{ textAlign: "center" }}>{step.title}</h3>
-                <p style={{ textAlign: "center" }}>{step.description}</p>
+              <div className="step-number"></div>
+              <div className="step-content"  style={{backgroundColor:step.color}}>
+                <h3 style={{ textAlign: "center" }}>
+                  {step.title} <i className={step.icon}></i>
+                </h3>
               </div>
             </div>
           ))}
